@@ -1,26 +1,59 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Form from './component/Form.js';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+  function App() {
+    const [
+      members, 
+      setMembers] = 
+      useState({ name: "", email: "", role: "" });
+  
+    const teamMembers = event => {
+      setMembers({ ...members, [event.target.name]: event.target.value });
+    };
+  
+    const handleSubmit = event => {
+      event.preventDefault();
+      console.log(member.name);
+      console.log(member.email);
+      console.log(member.role);
+    };
+  
+    return (
+      <div className="movie-list">
+        {members.map(form)};
+      </div>
+    );
+    
+    return (
+      <div className="App">
+        {console.log(member)}
+        <form onSubmit={event => handleSubmit(event)}>
+          <label>
+            name:
+            <input
+              type="text"
+              name="name"
+              value={member.name}
+              onChange={event => handleChange(event)}
+            />
+          </label>
+          <label>
+            email:
+            <input
+              type="text"
+              name="email"
+              value={member.email}
+              onChange={event => handleChange(event)}
+            />
+          </label>
+          <button>Submit!</button>
+        </form>
+      </div>
+    );
+  }
+
+  export default App;
+ 

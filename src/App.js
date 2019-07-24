@@ -49,6 +49,16 @@ import './App.css';
               onChange={event => handleChange(event)}
             />
           </label>
+          <input
+              type="text"
+              name="role"
+              value={member.role}
+              onChange={event => handleChange(event)}
+            />
+          </label>
+          <button>Submit!</button>
+        </form>
+      </div>
           <button>Submit!</button>
         </form>
       </div>
